@@ -211,6 +211,30 @@ Model Training (CNN / ViT)
 ![MSE ViT RGB](loss_vit_rgb.png)
 ![MSE ViT SOBEL](loss_vit_sobel.png)
 
+## Images
+
+![1](image1.jpg)
+![4](image4.jpg)
+![5](image5.jpg)
+![6](image6.jpg)
+![7](image7.jpg)
+![12](image12.jpg)
+![13](image13.jpg)
+![15](image15.jpg)
+
+**LiDAR**
+
+![3](image3.jpg)
+![8](image8.jpg)
+![10](image10.jpg)
+![14](image14.jpg)
+
+**Preprocessing**
+
+![11](image11.jpg)
+![9](image9.jpg)
+![2](image2.jpg)
+
 
 ## Inquiries & Code Access
 **Due to privacy and intellectual property considerations, the full source code is hosted in a secure private environment. Verified academic supervisors and recruiters may request access via the contact information provided in my GitHub Profile Bio or by opening a GitHub Issue in this repository.**
