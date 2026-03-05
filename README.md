@@ -139,8 +139,8 @@ python -m preprocess.preprocess_hsv
 
 After these steps are completed, the pipeline is ready for Model Training.
 ```
-python -m train.py (for CNN training)
-python -m vis_transformer.py (for ViT training)
+python -m training.train --mode rgb/sobel/hsv               #(for CNN training)
+python -m training.vis_transformer --mode rgb/sobel/hsv     #(for ViT training)
 ```
 
 ## Graphical Workflow Summary
