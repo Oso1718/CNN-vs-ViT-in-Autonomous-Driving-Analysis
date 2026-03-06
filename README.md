@@ -2,6 +2,7 @@
 
 ## Project Overview (Summary)
 
+This repository presents the experimental pipeline and results of my undergraduate thesis on computer vision architectures for autonomous driving.
 This project investigates how image preprocessing affects the performance of CNNs and Vision Transformers in autonomous driving tasks using a multimodal dataset of ~50,000 synchronized camera and LiDAR samples.
 
 **Key Result**
@@ -116,16 +117,16 @@ The variance in performance groups confirms that image preprocessing plays a cri
 
 ## Model Performance Summary
 
-```
-| Model | Preprocessing |  MAE  |  MSE  |
 
+| Model | Preprocessing |  MAE  |  MSE  |
+|------|------|------|------|
 |  CNN  |     HSV       | 0.056 | 0.015 |
 |  CNN  |     RGB       | 0.057 | 0.0157|
 |  CNN  |     Sobel     | 0.091 | 0.026 |
 |  ViT  |     HSV       | 0.157 | 0.044 |
 |  ViT  |     RGB       | 0.156 | 0.044 |
 |  ViT  |     Sobel     | 0.158 | 0.044 |
-```
+
 
 ## Future Work
 
