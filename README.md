@@ -62,6 +62,19 @@ Based on these findings—where CNNs are more efficient feature extractors for m
 
 CNN (Feature Extraction) -> ViT (Decision Layers) = Optimized Performance?
 
+## Infraestructure
+
+**Computing & Robotics Hardware**
+- **Workstation:** Acer Nitro 5 (Intel Core i7 12th Gen) + NVIDIA GeForce RTX 4050 (Training environment).
+- **Edge Computing:** Raspberry Pi 5 (Target deployment for real-time inference).
+- **Vehicle:** Autonomous Ackermann-steer platform equipped with LD06 LiDAR and camera.
+
+**Software Ecosystem**
+- **Frameworks:** TensorFlow (Core Deep Learning).
+- **Computer Vision:** OpenCV (Feature engineering & preprocessing).
+- **Language:** Python 3.10+ (Data pipeline & model orchestration).
+
+
 ## System Architecture & Data Pipeline
 
 The project follows a modular structure designed for scalability and data integrity in autonomous driving datasets.
