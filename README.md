@@ -22,8 +22,8 @@ The main objective of this project is to understand how image preprocessing affe
 
 I personally collected, cleaned, processed, trained, and evaluated 6 distinct models to isolate the impact of input representation on architectural efficiency:
 
-**CNN Suite:** RGB, HSV (Grayscale), and Sobel.
-**ViT Suite:** RGB, HSV (Grayscale), and Sobel.
+- **CNN Suite:** RGB, HSV (Grayscale), and Sobel.
+- **ViT Suite:** RGB, HSV (Grayscale), and Sobel.
 
 ## Conclusions
 
