@@ -1,12 +1,15 @@
-## Inquiries & Code Access
-**Due to privacy and intellectual property considerations, the full source code is hosted in a secure private environment. Verified academic supervisors and recruiters may request access via the contact information provided in my GitHub Profile Bio or by opening a GitHub Issue in this repository.**
-
-![Contact me](contact.png)
-
 # Benchmarking Structural and Chromatic Robustness: CNN vs. ViT in Autonomous Driving Analysis
 This project evaluates the performance and error convergence of Convolutional Neural Networks vs the Vision Transformer architecture. The study analyzes the impact of specific image transformations—RGB, HSV (Grayscale), and Sobel Edge Detection—using a multimodal dataset of +50,000 instances (Image + LiDAR) for autonomous navigation scenarios.
 
 The primary metrics used for success assessment are Mean Absolute Error (MAE) and Mean Squared Error (MSE).
+
+## Inquiries & Code Access
+**Due to privacy and intellectual property considerations, the full source code is hosted in a secure private repository. Verified academic supervisors and recruiters may request access via the contact information provided in my GitHub Profile Bio or by opening a GitHub Issue in this repository.**
+
+![Contact me](contact.png)
+
+## Research Question
+Does image preprocessing influence the convergence and generalization behavior of CNN and Visual Transformer architectures?
 
 ## Key Technical Findings
 
@@ -20,13 +23,61 @@ The primary metrics used for success assessment are Mean Absolute Error (MAE) an
 
 The main objective of this project is to understand whether image preprocessing affects the performance of neural networks or not and to identify which pipeline has the most significant impact on training efficiency.
 
-I personally collected, cleaned, processed, trained, and evaluated 6 distinct models to isolate the impact of input representation on architectural efficiency:
+I personally collected, cleaned, processed, trained, and evaluated 6 distinct models to isolate the impact of input representation on architectural efficiency.
+
+The nature of the project is a regression problem becasue the network needs to infer linear **velocity and angular velocity** which give us the number of neurons for our exit layer (2).
+
+**Networks architectures**
 
 - **CNN Suite:** RGB, HSV (Grayscale), and Sobel.
+  - It is constructed with 3 convolutional layers, increasing the number of kernels applied to the images.
+  - Each kernel is 3*3 and a stride of 2.
+  - Padding type: "same" to reduce spatial dimensionality.
+  - Normalization layer used Batch normalization to accelerate convergence and keep training steady.
+  - Activation function: ReLU.
+  - To reduce overfitting I used Global Average Pooling.
+  - Dense layer is made by 64 neurons.
+  - 2 exit neurons to predict linear velocity and angular velocity.
+
+Based on the paper **An image is Worth 16x16 Words (Dosovitskiy et al.)** and some internet resouces (Deep.Findr) I looked to adapt a architecture for ViT. 
 - **ViT Suite:** RGB, HSV (Grayscale), and Sobel.
+  - 16*16 patches size for keeping complexity
+  - Embedding space dimension: 128 to keep spacial variations.
+  - 4 deep layers with 4 attention heads to keep balance.
+  - Global Average Pooling to keep a global representation of the image.
+
+The dataset was split on a 80:20 ratio following scholar standards.
+[add image of the dataset characteristics]
 
 ## Dataset Description
+The dataset consists of over 50,000 synchronized samples collected from an autonomous Ackermann-steer robotic platform. Images are collected with the following especifications:
 
+- Total samples: ~50,000
+- Train/Test split: 80/20
+- Collected images:
+  - Width: 800 pixels
+  - Height: 600 pixels
+- Input resolution: 128x128
+- Prediction targets:
+  - Linear velocity
+  - Angular velocity
+
+
+**Preprocessing**
+I applied some techniques based on my research and decided the following:
+- Each image was resized to 128*128 pixels
+- Colorspaces
+  - RGB color space (normal)
+  - HSV greyscale (by separating channels H, S, V)
+   - For HSV I applied adaptative histogram equalitation (CLAHE)  
+  -  Sobel edge detector 
+
+Each sample includes:
+- RGB camera image
+- LiDAR-derived spatial representation
+- Telemetry data (steering angle, velocity)
+
+Data was collected across multiple driving sessions and later cleaned, deduplicated, and validated through a custom preprocessing pipeline.
 
 ## Conclusions
 
@@ -43,6 +94,19 @@ Despite ViT's ability to capture global context, it appears that 50,000 instance
 
 **The Role of Preprocessing**
 The variance in performance groups confirms that image preprocessing plays a critical role in model efficiency. Certain architectures benefit more from specific feature extractions (like HSV or Sobel), opening the door for new preprocessing configurations to enhance autonomous driving systems.
+
+## Model Performance Summary
+
+```
+| Model | Preprocessing |  MAE  |  MSE  |
+
+|  CNN  |     HSV       | 0.056 | 0.015 |
+|  CNN  |     RGB       | 0.057 | 0.0157|
+|  CNN  |     Sobel     | 0.091 | 0.026 |
+|  ViT  |     HSV       | 0.157 | 0.044 |
+|  ViT  |     RGB       | 0.156 | 0.044 |
+|  ViT  |     Sobel     | 0.158 | 0.044 |
+```
 
 ## Future Work
 
@@ -247,6 +311,3 @@ Model Training (CNN / ViT)
 ![9](image9.jpg)
 ![2](image2.jpg)
 
-
-## Inquiries & Code Access
-**Due to privacy and intellectual property considerations, the full source code is hosted in a secure private environment. Verified academic supervisors and recruiters may request access via the contact information provided in my GitHub Profile Bio or by opening a GitHub Issue in this repository.**
