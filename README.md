@@ -33,7 +33,7 @@ In the CNN suite, performance trends were consistent across RGB and HSV compared
 
 Regarding Mean Absolute Error (MAE), the CNN architecture consistently outperformed ViT, delivering robust results without overfitting. In contrast, the ViT architecture displayed a clear relationship between preprocessing and convergence speed: RGB-based ViT reached overfitting twice as fast (Epoch 2.5) as Sobel or HSV (Epoch 5).
 
-This suggests that the Vision Transformer model does not fully capitalize on visual representation differences and presents higher error rates compared to CNNs in this specific context. This behavior is likely attributable to the model's complexity and its sensitivity to dataset scale, limiting its generalization capacity within this experimental scenario.
+In this dataset scale, CNNs showed more stable generalization than ViT architectures, and presents higher error rates compared to CNNs in this specific context. This behavior is likely attributable to the model's complexity and its sensitivity to dataset scale, limiting its generalization capacity within this experimental scenario.
 
 **Why did CNNs outperform ViT?**
 Despite ViT's ability to capture global context, it appears that 50,000 instances were insufficient for the Transformer to abstract features as efficiently as the CNN’s local inductive bias.
