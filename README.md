@@ -18,22 +18,25 @@ The primary metrics used for success assessment are Mean Absolute Error (MAE) an
 
 ## Methodology & Objectives
 
-The main objective of this project is to understand how image preprocessing affects the performance of neural networks and to identify which pipeline has the most significant impact on training efficiency.
+The main objective of this project is to understand whether image preprocessing affects the performance of neural networks or not and to identify which pipeline has the most significant impact on training efficiency.
 
 I personally collected, cleaned, processed, trained, and evaluated 6 distinct models to isolate the impact of input representation on architectural efficiency:
 
 - **CNN Suite:** RGB, HSV (Grayscale), and Sobel.
 - **ViT Suite:** RGB, HSV (Grayscale), and Sobel.
 
+## Dataset Description
+
+
 ## Conclusions
 
-Experimental results demonstrate that architectural performance varies significantly based on the dataset's nature. We observed specific patterns inherent to each architecture: CNNs exhibited superior efficiency in reducing Mean Squared Error (MSE), while the Vision Transformer (ViT) architecture showed similar patterns across all cases but was prone to overfitting.
+Experimental results show that architectural performance varies significantly based on the dataset's nature. We observed specific patterns inherent to each architecture: CNNs exhibited superior efficiency in reducing Mean Squared Error (MSE), while the Vision Transformer (ViT) architecture showed similar patterns across all cases but was prone to overfitting.
 
-In the CNN suite, performance trends were consistent across RGB and HSV compared to Sobel, with a notable performance surge in the final epochs. Further testing with extended epoch cycles could clarify whether this is a transient variation or a stable convergence pattern. However, the current data provides sufficient evidence for solid conclusions.
+In the CNN suite, performance trends were consistent across RGB and HSV compared to Sobel, with a notable performance surge in the final epochs. Further testing with extended epoch cycles could clarify whether this is a transient variation or a stable convergence pattern and reach final conclusions.
 
-Regarding Mean Absolute Error (MAE), the CNN architecture consistently outperformed ViT, delivering robust results without overfitting. In contrast, the ViT architecture displayed a clear relationship between preprocessing and convergence speed: RGB-based ViT reached overfitting twice as fast (Epoch 2.5) as Sobel or HSV (Epoch 5).
+Regarding Mean Absolute Error (MAE), the CNN architecture for this experiment outperformed ViT, delivering  results without overfitting. In contrast, the ViT architecture displayed a clear relationship between preprocessing and convergence speed: RGB-based ViT reached overfitting twice as fast (Epoch 2.5) as Sobel or HSV (Epoch 5).
 
-In this dataset scale, CNNs showed more stable generalization than ViT architectures, and presents higher error rates compared to CNNs in this specific context. This behavior is likely attributable to the model's complexity and its sensitivity to dataset scale, limiting its generalization capacity within this experimental scenario.
+In this dataset scale, CNNs showed more stable generalization than ViT architectures, and presents higher error rates compared to CNNs in this specific context. This behavior is likely attributable to the model's complexity and its sensitivity to dataset scale, limiting its generalization capacity within this experimental scenario. Increase the size of the dataset would help to see when does ViT architectures overcome CNN's
 
 **Why did CNNs outperform ViT?**
 Despite ViT's ability to capture global context, it appears that 50,000 instances were insufficient for the Transformer to abstract features as efficiently as the CNN’s local inductive bias.
