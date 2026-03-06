@@ -1,12 +1,31 @@
 # Benchmarking Structural and Chromatic Robustness: CNN vs. ViT in Autonomous Driving Analysis
-This project evaluates the performance and error convergence of Convolutional Neural Networks vs the Vision Transformer architecture. The study analyzes the impact of specific image transformations—RGB, HSV (Grayscale), and Sobel Edge Detection—using a multimodal dataset of +50,000 instances (Image + LiDAR) for autonomous navigation scenarios.
 
-The primary metrics used for success assessment are Mean Absolute Error (MAE) and Mean Squared Error (MSE).
+## Project Overview (Summary)
+
+This project investigates how image preprocessing affects the performance of CNNs and Vision Transformers in autonomous driving tasks using a multimodal dataset of ~50,000 synchronized camera and LiDAR samples.
+
+**Key Result**
+CNN with HSV preprocessing achieved the best performance:
+
+MAE: 0.056  
+MSE: 0.015
+
+**Scope of the project**
+- Dataset engineering pipeline
+- CNN vs Vision Transformer benchmarking
+- Multiple preprocessing strategies (RGB, HSV, Sobel)
+- Autonomous driving regression task (velocity + steering prediction)
 
 ## Inquiries & Code Access
 **Due to privacy and intellectual property considerations, the full source code is hosted in a secure private repository. Verified academic supervisors and recruiters may request access via the contact information provided in my GitHub Profile Bio or by opening a GitHub Issue in this repository.**
 
 ![Contact me](contact.png)
+
+## Project (Full)
+
+This project evaluates the performance and error convergence of Convolutional Neural Networks vs the Vision Transformer architecture. The study analyzes the impact of specific image transformations—RGB, HSV (Grayscale), and Sobel Edge Detection—using a multimodal dataset of +50,000 instances (Image + LiDAR) for autonomous navigation scenarios.
+
+The primary metrics used for success assessment are Mean Absolute Error (MAE) and Mean Squared Error (MSE).
 
 ## Research Question
 Does image preprocessing influence the convergence and generalization behavior of CNN and Visual Transformer architectures?
