@@ -113,7 +113,7 @@ In this dataset scale, CNNs showed more stable generalization than ViT architect
 Despite ViT's ability to capture global context, it appears that 50,000 instances were insufficient for the Transformer to abstract features as efficiently as the CNN’s local inductive bias.
 
 **The Role of Preprocessing**
-The variance in performance groups confirms that image preprocessing plays a critical role in model efficiency. Certain architectures benefit more from specific feature extractions (like HSV or Sobel), opening the door for new preprocessing configurations to enhance autonomous driving systems.
+The variance in performance groups show a impact on how preprocessing plays a role in model efficiency. Certain architectures benefit more from specific feature extractions (like HSV or Sobel), opening the door for new preprocessing configurations to enhance autonomous driving systems. Eventhough, it is necessary more experimentation.
 
 ## Model Performance Summary
 
