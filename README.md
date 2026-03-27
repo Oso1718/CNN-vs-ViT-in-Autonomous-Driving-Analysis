@@ -17,6 +17,10 @@ MSE: 0.015
 - Multiple preprocessing strategies (RGB, HSV, Sobel)
 - Autonomous driving regression task (velocity + steering prediction)
 
+
+## Code Repository
+
+[AutonomousDriving-Pipeline](https://github.com/Oso1718/AutonomousDriving-Code)
 ## Inquiries & Code Access
 **Due to privacy and intellectual property considerations, the full source code is hosted in a secure private repository. Verified academic supervisors and recruiters may request access via the contact information provided in my GitHub Profile Bio or by opening a GitHub Issue in this repository.**
 
